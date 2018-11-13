@@ -9,6 +9,8 @@ public class App {
         Service service = new Service();
         service.insertIntoHash(Aharan);
         service.insertIntoHash(Raket);
+
         System.out.println(service.getAccounts());
+        System.out.println(service.hashMapToJSON());
     }
 }
