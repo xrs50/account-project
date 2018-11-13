@@ -3,7 +3,6 @@ public class Account {
     private String lastName;
     private int accountNumber;
 
-
     public String getFirstName() {
         return firstName;
     }
