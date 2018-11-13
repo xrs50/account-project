@@ -4,17 +4,17 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class Service {
-    private static HashMap<Integer, Account> accounts = new HashMap<Integer, Account>();
+    private static HashMap<Integer, Account> accountsHashMap = new HashMap<Integer, Account>();
 
     public HashMap<Integer, Account> getAccounts() {
-        return accounts;
+        return accountsHashMap;
     }
 
     public JSONObject hashMapToJSON(){
-        return new JSONObject(accounts);
+        return new JSONObject(accountsHashMap);
     }
 
     public void insertIntoHash(Account account){
-        accounts.put(account.getAccountNumber(), account);
+        accountsHashMap.put(account.getAccountNumber(), account);
     }
 }
