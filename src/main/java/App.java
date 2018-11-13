@@ -6,6 +6,7 @@ public class App {
         Account Aharan = new Account(1, "Aharan", "Manoharan");
         Account Raket = new Account(2, "Raket", "Makhim");
 
+
         Service service = new Service();
         service.insertIntoHash(Aharan);
         service.insertIntoHash(Raket);
