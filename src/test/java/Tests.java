@@ -6,6 +6,13 @@ public class Tests {
     Service service = new Service();
 
     @Test
+    public void checkUserCreated(){
+        Account Aharan = new Account(1,"Aharan", "Manoharan");
+        service.insertIntoHash(Aharan);
+        Assert.assertEquals(1, service.getAccounts().size());
+    }
+
+    @Test
     public void countAharanInstances(){
         Account Aharan = new Account(1,"Aharan", "Manoharan");
         service.insertIntoHash(Aharan);
@@ -30,5 +37,14 @@ public class Tests {
         service.insertIntoHash(Kavin);
         service.insertIntoHash(Manoharan);
         Assert.assertEquals(3, peopleFinder.findInstancesOfNameWithStreams("Manoharan"));
+    }
+
+    @Test
+    public void jsonTest(){
+        Account Aharan = new Account(1,"Aharan", "Manoharan");
+        service.insertIntoHash(Aharan);
+        String jsonToString = service.hashMapToJSON().toString();
+        Assert.assertEquals("{\"1\":{\"firstName\":\"Aharan\",\"lastName\":\"Manoharan\",\"accountNumber\":1}}", jsonToString);
+
     }
 }
