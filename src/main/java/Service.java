@@ -7,13 +7,9 @@ public class Service {
         return accounts;
     }
 
-    public void setAccounts(HashMap<Integer, String> accounts) {
-        this.accounts = accounts;
-    }
+    public void insertIntoHash(Account account){
 
-    public void insertIntoHash(int accountNumber,  String firstName, String lastName){
-        String firstAndLastName = firstName +" "+ lastName;
-        accounts.put(accountNumber, firstAndLastName);
-
+        String firstAndLastName = account.getFirstName() +" "+ account.getLastName();
+        accounts.put(account.getAccountNumber(), firstAndLastName);
     }
 }
