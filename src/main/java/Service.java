@@ -1,15 +1,19 @@
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class Service {
-    private static HashMap<Integer, String> accounts = new HashMap<Integer, String>();
+    private static HashMap<Integer, Account> accountsHashMap = new HashMap<Integer, Account>();
 
-    public HashMap<Integer, String> getAccounts() {
-        return accounts;
+    public HashMap<Integer, Account> getAccounts() {
+        return accountsHashMap;
+    }
+
+    public JSONObject hashMapToJSON(){
+        return new JSONObject(accountsHashMap);
     }
 
     public void insertIntoHash(Account account){
-
-        String firstAndLastName = account.getFirstName() +" "+ account.getLastName();
-        accounts.put(account.getAccountNumber(), firstAndLastName);
+        accountsHashMap.put(account.getAccountNumber(), account);
     }
 }
