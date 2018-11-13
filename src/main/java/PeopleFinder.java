@@ -22,4 +22,9 @@ public class PeopleFinder {
         }
         return count;
     }
+
+    public int findInstancesOfNameWithStreams(String name){
+
+        return (int)service.getAccounts().values().stream().filter(account -> account.getLastName().equals(name) || account.getFirstName().equals(name)).count();
+    }
 }

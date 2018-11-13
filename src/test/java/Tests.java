@@ -20,4 +20,15 @@ public class Tests {
         service.insertIntoHash(Kavin);
         Assert.assertEquals(2, peopleFinder.findInstancesOfLastName("Manoharan"));
     }
+
+    @Test
+    public void countInstanceOfNameByStreamTest(){
+        Account Aharan = new Account(1,"Aharan", "Manoharan");
+        Account Kavin = new Account(2, "Kavin", "Manoharan");
+        Account Manoharan = new Account(3, "Manoharan", "Gnanasundaram");
+        service.insertIntoHash(Aharan);
+        service.insertIntoHash(Kavin);
+        service.insertIntoHash(Manoharan);
+        Assert.assertEquals(3, peopleFinder.findInstancesOfNameWithStreams("Manoharan"));
+    }
 }
